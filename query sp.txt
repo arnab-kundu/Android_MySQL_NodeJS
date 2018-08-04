@@ -1,0 +1,23 @@
+DELIMITER $$
+
+USE `employees`$$
+
+DROP PROCEDURE IF EXISTS `get_employee_detalis`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_employee_detalis`(number_of_records INT)
+BEGIN
+SELECT f.*,g.Managers FROM(
+SELECT c.*, MAX(salary) FROM(
+SELECT b.*, title FROM(
+SELECT a.*,departments.dept_name FROM(
+SELECT e.*, d.`dept_no` FROM employees e RIGHT JOIN `dept_emp` d ON e.emp_no = d.emp_no GROUP BY d.emp_no ORDER BY e.emp_no LIMIT number_of_records,10
+) a RIGHT JOIN departments ON a.dept_no = departments.dept_no WHERE a.dept_no!='(null)'
+) b RIGHT JOIN titles ON b.emp_no = titles.emp_no WHERE b.emp_no !='(null)' 
+) c RIGHT JOIN salaries ON c.emp_no = salaries.emp_no WHERE c.emp_no !='(null)' GROUP BY c.emp_no#, title
+) f RIGHT JOIN (SELECT e.dept_no, GROUP_CONCAT(FullName SEPARATOR ', ')AS Managers FROM(
+		SELECT dept_no, CONCAT(first_name," ",last_name)AS FullName FROM dept_manager dm LEFT JOIN employees e ON dm.emp_no = e.emp_no
+	) e GROUP BY e.dept_no
+) g ON f.dept_no = g.dept_no WHERE f.emp_no!='(null)' ORDER BY f.emp_no;
+	END$$
+
+DELIMITER ;

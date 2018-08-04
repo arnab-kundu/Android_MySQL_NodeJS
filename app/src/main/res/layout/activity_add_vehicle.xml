@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".activity.AddVehicleActivity">
+
+
+    <TextView
+        style="@style/styleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0"
+        android:text="ADD NEW PRODUCT" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Name :" />
+
+        <EditText
+            android:id="@+id/productName"
+            style="@style/styleEditText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Code :" />
+
+        <EditText
+            android:id="@+id/productCode"
+            style="@style/styleEditText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Type :" />
+
+        <EditText
+            android:id="@+id/productLine"
+            style="@style/styleEditText"
+            android:text="Motorcycles" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Vendor :" />
+
+        <EditText
+            android:id="@+id/productVendor"
+            style="@style/styleEditText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Description :" />
+
+        <EditText
+            android:id="@+id/productDescription"
+            style="@style/styleEditText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Stock :" />
+
+        <EditText
+            android:id="@+id/quantityInStock"
+            style="@style/styleEditText"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="Buy Price :" />
+
+        <EditText
+            android:id="@+id/buyPrice"
+            style="@style/styleEditText"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/styleTextView"
+            android:text="MSRP :" />
+
+        <EditText
+            android:id="@+id/MSRP"
+            style="@style/styleEditText"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:onClick="Add"
+        android:text="ADD" />
+
+</LinearLayout>

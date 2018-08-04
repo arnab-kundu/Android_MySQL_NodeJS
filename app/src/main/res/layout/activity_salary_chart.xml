@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="#dadada"
+    tools:context=".activity.SalaryChartActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/actv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext"
+        android:completionThreshold="1"
+        android:hint="Employee Name"
+        android:inputType="textNoSuggestions"
+        android:padding="5dp"
+        tools:ignore="LabelFor" />
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/salary_chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

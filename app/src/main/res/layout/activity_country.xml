@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CountryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ID" />
+
+        <Button
+            android:id="@+id/CountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CountryCode"
+            android:onClick="countryCodeClick"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/EnglishName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EnglishName"
+            android:onClick="englishNameClick"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/FrenchName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="frenchNameClick"
+            android:text="FrenchName"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#939393"
+        android:padding="3dp"
+        android:text="Filtered by-----"
+        android:textColor="#000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+    <EditText
+        android:id="@+id/et_filter"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+       <!-- <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="requestClicked"
+            android:text="Request" />-->
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_alert"
+    style="@style/Animation.AppCompat.Dialog"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Enter Server IP"
+        android:textColor="#FFF"
+        android:textSize="25dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext"
+        android:padding="5dp"
+        android:textColorHint="#8c8c8c"
+        android:hint="Remote Server IP address"
+        android:inputType="number|text"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/submit"
+        android:textColor="#FFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Enter" />
+
+</LinearLayout>
