@@ -132,4 +132,20 @@ public class Parser {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<String> productLine(String response) {
+        ArrayList<String> productLine = new ArrayList<>();
+        productLine.add("Select");
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("productLines");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                productLine.add(jsonArray.getJSONObject(i).getString("productLine"));
+            }
+            return productLine;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return productLine;
+        }
+    }
 }

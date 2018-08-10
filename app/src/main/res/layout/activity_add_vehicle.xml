@@ -61,6 +61,13 @@
         <Spinner
             android:id="@+id/productLine"
             style="@style/styleEditText"
+            android:visibility="gone"
+            android:layout_height="30dp" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading_product_line"
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="30dp" />
 
     </LinearLayout>
