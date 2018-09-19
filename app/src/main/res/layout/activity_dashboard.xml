@@ -8,6 +8,17 @@
     tools:context=".activity.DashboardActivity">
 
     <Button
+        android:id="@+id/classicmodelsdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:onClick="classicmodelsdb"
+        android:text="Classic Models DB"
+        android:textAllCaps="false" />
+
+
+    <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,6 +1,5 @@
 package com.example.akundu.android_mysql_nodejs.activity;
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -8,11 +7,13 @@ import android.view.View
 import android.widget.ArrayAdapter
 import com.example.akundu.android_mysql_nodejs.MyApplication
 import com.example.akundu.android_mysql_nodejs.R
-import com.example.akundu.android_mysql_nodejs.network.*
+import com.example.akundu.android_mysql_nodejs.network.API
+import com.example.akundu.android_mysql_nodejs.network.ApiResponseListener
+import com.example.akundu.android_mysql_nodejs.network.NetworkTask
+import com.example.akundu.android_mysql_nodejs.network.RequestType
 import com.example.akundu.android_mysql_nodejs.pojo.Response
 import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_add_vehicle.*
-
 
 class AddVehicleActivity : AppCompatActivity(), ApiResponseListener {
 
@@ -32,21 +33,12 @@ class AddVehicleActivity : AppCompatActivity(), ApiResponseListener {
         val s = arrayOf<String>("Select", "Motorcycles", "Ships", "Planes", "Trains", "Trucks and Buses", "Classic Cars", "Vintage Cars")
 
 
-        //val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, s)
-        //productLine.adapter = adapter
-        NetworkTask(this, API.PRODUCT_LINE).execute("http://" + MyApplication.serverIP + ":3000/getProductLines")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, s)
+        productLine.adapter = adapter
 
     }
 
     override fun onResponse(response: Response?) {
-        if (response?.api_name == API.PRODUCT_LINE) {
-            val productLineArray: ArrayList<String> = Parser().productLine(response.response)
-
-            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, productLineArray)
-            productLine.adapter = adapter
-            pb_loading_product_line.visibility = View.GONE
-            productLine.visibility = View.VISIBLE
-        }
         Log.d("msg", response?.response)
     }
 

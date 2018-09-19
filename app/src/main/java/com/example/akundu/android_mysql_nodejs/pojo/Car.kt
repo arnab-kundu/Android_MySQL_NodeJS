@@ -1,13 +1,8 @@
 package com.example.akundu.android_mysql_nodejs.pojo
 
 class Car {
-
-    companion object {
-        var abc = ""
-    }
-
     var productCode = ""
-    var productName = ""
+    var productName= ""
     var productLine = ""
     var productScale = ""
     var productVendor = ""

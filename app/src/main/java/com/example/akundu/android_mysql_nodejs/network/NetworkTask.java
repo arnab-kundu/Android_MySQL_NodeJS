@@ -1,6 +1,5 @@
 package com.example.akundu.android_mysql_nodejs.network;
 
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -16,7 +15,6 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.SocketException;
-import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -24,9 +22,9 @@ import javax.net.ssl.SSLHandshakeException;
 
 public class NetworkTask extends AsyncTask<String, Void, Response> {
 
-    private API api_name;
-    private int responseCode = 0;
-    private RequestType requestType;
+    API api_name;
+    int responseCode = 0;
+    RequestType requestType;
     private ApiResponseListener apiResponseListener;
 
     public NetworkTask(ApiResponseListener apiResponseListener, API api_name) {
@@ -46,7 +44,6 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
         super.onPreExecute();
     }
 
-    @SuppressLint("LongLogTag")
     @Override
     protected Response doInBackground(String... strings) {
         try {
@@ -54,17 +51,17 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
             Log.d("msg Request", "" + url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setReadTimeout(7000);
-
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            //httpURLConnection.setRequestMethod("GET");
             if (requestType == RequestType.POST) {
                 httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setRequestProperty("Content-Type", "application/json");
+
                 OutputStream outputStream = new BufferedOutputStream(httpURLConnection.getOutputStream());
                 outputStream.write(strings[1].getBytes("UTF-8"));
                 outputStream.flush();
                 outputStream.close();
             } else
                 httpURLConnection.setRequestMethod("GET");
-
             responseCode = httpURLConnection.getResponseCode();
             Log.d("msg ResponseCode", "" + httpURLConnection.getResponseCode());
             InputStream inputStream = httpURLConnection.getInputStream();
@@ -81,7 +78,7 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
             Log.e("msg SSLHandshake", "Restricted the request by Firewall" + e);
             return new Response("SSLHandshakeException", api_name);
         } catch (FileNotFoundException e) {
-            Log.e("msg FileNotFoundException", "Error code 500/404 comes under this exception" + e);
+            Log.e("msg FileNotFoundExcepti", "Error code 500/404 comes under this exception" + e);
             Log.e("msg ResponseCode", "" + responseCode);
             return new Response("FileNotFoundException", api_name);
         } catch (EOFException e) {
@@ -90,15 +87,9 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
         } catch (SocketException e) {
             Log.e("msg SocketException", "" + e);
             return new Response("SocketException", api_name);
-        } catch (SocketTimeoutException e) {
-            Log.e("msg SocketTimeoutException", "" + e);
-            return new Response("SocketTimeoutException", api_name);
         } catch (IOException e) {
             Log.e("msg IOException", "" + e);
             return new Response("IOException", api_name);
-        } catch (Exception e) {
-            Log.e("msg Exception", "" + e);
-            return new Response("Exception", api_name);
         }
     }
 

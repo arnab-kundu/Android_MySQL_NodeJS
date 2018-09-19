@@ -212,7 +212,6 @@ public class SplashActivity extends AppCompatActivity implements GestureDetector
         //editor.apply();
         //startActivity(new Intent(SplashActivity.this, SplashActivity.class));
         //finish();
-
         return false;
     }
 
