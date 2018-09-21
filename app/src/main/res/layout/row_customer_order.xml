@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/bg"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#a2cacaca">
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="18dp"
+            android:maxLength="25"
+            android:text="Product Name"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/productCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/productName"
+            android:layout_below="@+id/productName"
+            android:text="productCode" />
+
+        <TextView
+            android:id="@+id/productVendor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="#d4d4d4"
+            android:gravity="right"
+            android:paddingRight="5dp"
+            android:text="Product Vendor:"
+            android:textColor="#4e4e4e"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="#178117">
+
+            <com.example.akundu.android_mysql_nodejs.view.VerticalTextView
+                android:id="@+id/productLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:gravity="bottom"
+                android:text="Product Line"
+                android:textColor="#FFF"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/orderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="#d1d1d1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="orderNumber"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/priceEach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/image"
+            android:text="priceEach"
+            android:textColor="#e72113"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/quantityOrdered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/priceEach"
+            android:layout_toLeftOf="@+id/image"
+            android:text="Quantity Ordered"
+            android:textColor="#000" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_launcher_background" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.akundu.android_mysql_nodejs.network;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -15,6 +16,7 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -44,6 +46,7 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
         super.onPreExecute();
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     protected Response doInBackground(String... strings) {
         try {
@@ -87,6 +90,9 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
         } catch (SocketException e) {
             Log.e("msg SocketException", "" + e);
             return new Response("SocketException", api_name);
+        } catch (SocketTimeoutException e) {
+            Log.e("msg SocketTimeoutException", "" + e);
+            return new Response("SocketTimeoutException", api_name);
         } catch (IOException e) {
             Log.e("msg IOException", "" + e);
             return new Response("IOException", api_name);

@@ -34,7 +34,8 @@
         <activity android:name=".activity.AddVehicleActivity" />
         <activity android:name=".classicmodelsdb.SelectUserTypeActivity" />
         <activity android:name=".classicmodelsdb.employee.CustomerListActivity" />
-        <activity android:name=".classicmodelsdb.EmployeeDashboardActivity"/>
+        <activity android:name=".classicmodelsdb.EmployeeDashboardActivity" />
+        <activity android:name=".classicmodelsdb.employee.CustomerOrdersActivity"></activity>
     </application>
 
 </manifest>

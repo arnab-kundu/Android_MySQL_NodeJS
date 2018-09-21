@@ -1,5 +1,7 @@
 package com.example.akundu.android_mysql_nodejs.classicmodelsdb.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.akundu.android_mysql_nodejs.R;
+import com.example.akundu.android_mysql_nodejs.classicmodelsdb.employee.CustomerOrdersActivity;
 import com.example.akundu.android_mysql_nodejs.classicmodelsdb.pojo.Customer;
 
 import java.util.List;
@@ -17,9 +20,11 @@ import java.util.List;
 public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapter.MyViewHolder> {
 
     private List<Customer> customers;
+    private Context context;
 
-    public CustomerListAdapter(List<Customer> customers) {
+    public CustomerListAdapter(Context context, List<Customer> customers) {
         this.customers = customers;
+        this.context = context;
     }
 
     @NonNull
@@ -32,14 +37,16 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
         final Customer customer = customers.get(position);
-        holder.title.setText("" + customer.customerCode);
+        //holder.title.setText("" + customer.customerNumber);
         holder.genre.setText(customer.customerName);
         holder.year.setText(customer.phone);
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("values", customers.get(holder.getAdapterPosition()).customerCode + "");
-
+                Log.d("values", customers.get(holder.getAdapterPosition()).customerNumber + "");
+                Intent intent = new Intent(context, CustomerOrdersActivity.class);
+                intent.putExtra("customerNumber", customers.get(holder.getAdapterPosition()).customerNumber);
+                context.startActivity(intent);
             }
         });
     }

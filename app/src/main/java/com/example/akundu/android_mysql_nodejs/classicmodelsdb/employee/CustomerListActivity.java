@@ -50,7 +50,7 @@ public class CustomerListActivity extends AppCompatActivity implements ApiRespon
             for (int i = 0; i < jsonArray.length(); i++) {
                 Customer customer = new Customer();
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                customer.customerCode = jsonObject.optInt("customerNumber");
+                customer.customerNumber = jsonObject.optInt("customerNumber");
                 customer.customerName = jsonObject.optString("customerName");
                 customer.phone = jsonObject.optString("phone");
                 customers.add(customer);
@@ -60,7 +60,7 @@ public class CustomerListActivity extends AppCompatActivity implements ApiRespon
             Log.e("msg", "" + e);
         }
         progressDialog.dismiss();
-        CustomerListAdapter customerListAdapter = new CustomerListAdapter(customers);
+        CustomerListAdapter customerListAdapter = new CustomerListAdapter(this,customers);
         customerList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         customerList.setAdapter(customerListAdapter);
     }
