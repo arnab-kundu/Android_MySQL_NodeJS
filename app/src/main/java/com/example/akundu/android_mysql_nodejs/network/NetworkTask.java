@@ -18,6 +18,7 @@ import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.net.ssl.SSLHandshakeException;
@@ -28,6 +29,7 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
     int responseCode = 0;
     RequestType requestType;
     private ApiResponseListener apiResponseListener;
+    private ArrayList<String[]> headers;
 
     public NetworkTask(ApiResponseListener apiResponseListener, API api_name) {
         this.apiResponseListener = apiResponseListener;
@@ -40,6 +42,12 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
         this.requestType = requestType;
     }
 
+    public NetworkTask(ApiResponseListener apiResponseListener, API api_name, RequestType requestType, ArrayList<String[]> headers) {
+        this.api_name = api_name;
+        this.requestType = requestType;
+        this.apiResponseListener = apiResponseListener;
+        this.headers = headers;
+    }
 
     @Override
     protected void onPreExecute() {
@@ -55,6 +63,12 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setReadTimeout(7000);
             httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            if (headers != null) {
+                for (String[] header : headers) {
+                    httpURLConnection.setRequestProperty(header[0], header[1]);
+                    Log.d("msg", header[0] + " " + header[1]);
+                }
+            }
             //httpURLConnection.setRequestMethod("GET");
             if (requestType == RequestType.POST) {
                 httpURLConnection.setRequestMethod("POST");
