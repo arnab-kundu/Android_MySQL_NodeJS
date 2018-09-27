@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <com.example.akundu.android_mysql_nodejs.view.DigitalView
+        android:id="@+id/digit2"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:background="#000"
+        android:layout_centerInParent="true" />
+
+    <com.example.akundu.android_mysql_nodejs.view.DigitalView
+        android:id="@+id/digit1"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:background="#000"
+        android:layout_centerInParent="true" />
+
+    <com.example.akundu.android_mysql_nodejs.view.DigitalView
+        android:id="@+id/digit0"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:background="#000"
+        android:layout_centerInParent="true" />
+</LinearLayout>

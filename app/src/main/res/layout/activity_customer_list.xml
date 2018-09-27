@@ -3,13 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_classic_models_db"
+    android:background="@drawable/bg_classic_models_db_blur"
     tools:context=".classicmodelsdb.employee.CustomerListActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <!--<android.support.v7.widget.RecyclerView
         android:id="@+id/customerList"
-        android:background="#38dedede"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
+        android:background="#38dedede"
+        android:scrollbars="vertical" />-->
+
+    <ListView
+        android:id="@+id/customerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#38dedede"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        android:scrollbars="none" />
+
 </LinearLayout>

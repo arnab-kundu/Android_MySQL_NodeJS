@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.akundu.android_mysql_nodejs.R;
+import com.example.akundu.android_mysql_nodejs.TestActivity;
 
 public class SelectUserTypeActivity extends AppCompatActivity {
 
@@ -21,6 +21,7 @@ public class SelectUserTypeActivity extends AppCompatActivity {
     }
 
     public void customer_login(View view) {
-        Toast.makeText(this, "Work in progress", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Work in progress", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, TestActivity.class));
     }
 }

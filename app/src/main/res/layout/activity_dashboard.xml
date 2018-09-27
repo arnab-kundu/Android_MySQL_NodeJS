@@ -74,4 +74,9 @@
         android:onClick="AddVehicle"
         android:text="AddVehicle"
         android:textAllCaps="false" />
+
+    <com.example.akundu.android_mysql_nodejs.view.DigitalView
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true" />
 </RelativeLayout>

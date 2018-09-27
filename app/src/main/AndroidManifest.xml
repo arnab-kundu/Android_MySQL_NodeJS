@@ -35,7 +35,11 @@
         <activity android:name=".classicmodelsdb.SelectUserTypeActivity" />
         <activity android:name=".classicmodelsdb.employee.CustomerListActivity" />
         <activity android:name=".classicmodelsdb.EmployeeDashboardActivity" />
-        <activity android:name=".classicmodelsdb.employee.CustomerOrdersActivity"></activity>
+        <activity android:name=".classicmodelsdb.employee.CustomerOrdersActivity" />
+        <activity android:name=".classicmodelsdb.CustomerDashboardActivity" />
+        <activity android:name=".TestActivity">
+
+        </activity>
     </application>
 
 </manifest>
