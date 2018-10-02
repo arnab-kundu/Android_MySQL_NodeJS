@@ -61,6 +61,7 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
             URL url = new URL(strings[0].replaceAll(" ", "%20"));
             Log.d("msg Request", "" + url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setConnectTimeout(3000);
             httpURLConnection.setReadTimeout(7000);
             httpURLConnection.setRequestProperty("Content-Type", "application/json");
             if (headers != null) {
