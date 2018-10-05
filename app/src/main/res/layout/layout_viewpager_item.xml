@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:orientation="horizontal">
+    android:background="@drawable/bg_classic_models_db"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="10dp"
         android:background="@drawable/material_design">
 
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@drawable/edge_top" />
+        <!--   <View
+               android:layout_width="match_parent"
+               android:layout_height="10dp"
+               android:background="@drawable/edge_top" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/edge_bottom" />
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="10dp"
+               android:layout_alignParentBottom="true"
+               android:background="@drawable/edge_bottom" />-->
 
         <View
             android:layout_width="10dp"
@@ -38,5 +38,4 @@
 
     </RelativeLayout>
 
-
-</LinearLayout>
+</RelativeLayout>

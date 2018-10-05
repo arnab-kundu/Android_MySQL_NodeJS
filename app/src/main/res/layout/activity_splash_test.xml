@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".SplashTestActivity">
+
+    <ImageView
+        android:id="@+id/bg_water_mark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_snowflake_transparent_watermark" />
+
+    <ImageView
+        android:id="@+id/bg_photo_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_floral" />
+
+
+    <ImageView
+        android:id="@+id/node_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/bg_photo_frame1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="right|bottom"
+        android:background="@drawable/bg_bottom_corner" />
+
+</FrameLayout>

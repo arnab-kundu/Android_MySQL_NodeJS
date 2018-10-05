@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.akundu.android_mysql_nodejs.R;
+import com.example.akundu.android_mysql_nodejs.SplashTestActivity;
 import com.example.akundu.android_mysql_nodejs.TestActivity;
 
 public class SelectUserTypeActivity extends AppCompatActivity {
@@ -23,5 +24,9 @@ public class SelectUserTypeActivity extends AppCompatActivity {
     public void customer_login(View view) {
         //Toast.makeText(this, "Work in progress", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, TestActivity.class));
+    }
+
+    public void splash(View view) {
+        startActivity(new Intent(this,SplashTestActivity.class));
     }
 }

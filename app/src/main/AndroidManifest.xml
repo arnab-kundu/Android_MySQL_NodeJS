@@ -34,10 +34,16 @@
         <activity android:name=".activity.AddVehicleActivity" />
         <activity android:name=".classicmodelsdb.SelectUserTypeActivity" />
         <activity android:name=".classicmodelsdb.employee.CustomerListActivity" />
-        <activity android:name=".classicmodelsdb.EmployeeDashboardActivity" />
+        <activity android:name=".classicmodelsdb.EmployeeDashboardActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".classicmodelsdb.employee.CustomerOrdersActivity" />
         <activity android:name=".classicmodelsdb.CustomerDashboardActivity" />
         <activity android:name=".TestActivity">
+
+        </activity>
+        <activity
+            android:name=".SplashTestActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
     </application>

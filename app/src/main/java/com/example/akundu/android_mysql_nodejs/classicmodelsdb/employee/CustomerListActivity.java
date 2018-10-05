@@ -1,6 +1,7 @@
 package com.example.akundu.android_mysql_nodejs.classicmodelsdb.employee;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -46,7 +47,7 @@ public class CustomerListActivity extends AppCompatActivity implements ApiRespon
     @Override
     public void onResponse(Response response) {
         String stringResponse = response.response;
-        List<Customer> customers = new ArrayList<>();
+        final List<Customer> customers = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(stringResponse);
@@ -87,6 +88,17 @@ public class CustomerListActivity extends AppCompatActivity implements ApiRespon
                 ((FoldingCell) view).toggle(false);
                 // register in adapter that state for selected cell is toggled
                 foldingCellListAdapter.registerToggle(pos);
+            }
+        });
+        customerList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Log.d("values", customers.get(position).customerNumber + "");
+                Intent intent = new Intent(CustomerListActivity.this, CustomerOrdersActivity.class);
+                intent.putExtra("customerNumber", customers.get(position).customerNumber);
+                CustomerListActivity.this.startActivity(intent);
+                return true;
             }
         });
     }
