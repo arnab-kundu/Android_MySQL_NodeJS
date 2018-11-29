@@ -2,6 +2,7 @@ package com.example.akundu.android_mysql_nodejs.network;
 
 import android.util.Log;
 
+import com.example.akundu.android_mysql_nodejs.employeesdb.pojo.Department;
 import com.example.akundu.android_mysql_nodejs.pojo.Car;
 import com.example.akundu.android_mysql_nodejs.pojo.Country;
 import com.example.akundu.android_mysql_nodejs.pojo.Employee;
@@ -44,7 +45,6 @@ public class Parser {
             e.printStackTrace();
         }
     }
-
 
     public void employeeData(String response, ArrayList<Employee> employees) {
         try {
@@ -130,6 +130,44 @@ public class Parser {
         } catch (JSONException e) {
             Log.e("msg", "" + e);
             e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Department> getDepartments(String response) {
+        ArrayList<Department> departmentsArrayList = new ArrayList<>();
+        try {
+            JSONArray jsonArray = new JSONArray(response);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Department department = new Department();
+                department.dept_no = jsonArray.getJSONObject(i).optString("dept_no");
+                department.dept_name = jsonArray.getJSONObject(i).optString("dept_name");
+                departmentsArrayList.add(department);
+            }
+            return departmentsArrayList;
+        } catch (JSONException e) {
+            Log.e("msg", "" + e);
+            return null;
+        }
+
+    }
+
+    public ArrayList<Employee> getEmployees(String response) {
+        ArrayList<Employee> employees = new ArrayList<>();
+        try {
+            JSONArray jsonArray = new JSONArray(response);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Employee employee = new Employee();
+                employee.setEmp_no(jsonArray.getJSONObject(i).optInt("emp_no"));
+                employee.setName(jsonArray.getJSONObject(i).optString("full_name"));
+                employee.setDept_name(jsonArray.getJSONObject(i).optString("dept_name"));
+                employee.setDept_no(jsonArray.getJSONObject(i).optString("dept_no"));
+                employees.add(employee);
+            }
+            return employees;
+        } catch (JSONException e) {
+            Log.e("msg", "" + e);
+            return null;
         }
     }
 }

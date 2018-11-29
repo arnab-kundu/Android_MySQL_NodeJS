@@ -1,8 +1,10 @@
 package com.example.akundu.android_mysql_nodejs;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.akundu.android_mysql_nodejs.view.DigitalView;
 
@@ -17,6 +19,7 @@ public class TestActivity extends AppCompatActivity {
     int range;
     Thread thread0;
     boolean IsThreadRunning;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +29,9 @@ public class TestActivity extends AppCompatActivity {
         digitalView0 = findViewById(R.id.digit0);
         digitalView1 = findViewById(R.id.digit1);
         digitalView2 = findViewById(R.id.digit2);
+textView = findViewById(R.id.textview);
 
-
-
+       startCountAnimation();
 
        /* Runnable runnable = new Runnable() {
             @Override
@@ -145,5 +148,17 @@ public class TestActivity extends AppCompatActivity {
         super.onPause();
         Log.d("msg", "onPause");
         IsThreadRunning = false;
+    }
+
+
+    private void startCountAnimation() {
+        ValueAnimator animator = ValueAnimator.ofInt(0, 600);
+        animator.setDuration(5000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                textView.setText(animation.getAnimatedValue().toString());
+            }
+        });
+        animator.start();
     }
 }

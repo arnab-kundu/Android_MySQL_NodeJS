@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.akundu.android_mysql_nodejs.CarActivity;
 import com.example.akundu.android_mysql_nodejs.R;
 import com.example.akundu.android_mysql_nodejs.classicmodelsdb.SelectUserTypeActivity;
+import com.example.akundu.android_mysql_nodejs.employeesdb.EmployeesDashboardActivity;
 import com.example.akundu.android_mysql_nodejs.network.RequestType;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -30,8 +31,8 @@ public class DashboardActivity extends AppCompatActivity {
         }
     }
 
-    public void Employee(View view) {
-        startActivity(new Intent(this, EmployeeActivity.class));
+    public void EmployeeDB(View view) {
+        startActivity(new Intent(this, EmployeesDashboardActivity.class));
     }
 
     public void SalaryChart(View view) {
