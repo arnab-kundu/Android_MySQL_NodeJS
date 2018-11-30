@@ -57,7 +57,7 @@ public class EmployeeByDepartmentsActivity extends AppCompatActivity implements 
     @Override
     public void onResponse(Response response) {
         if (response.api_name == API.EMP_DEPT) {
-            Log.d("msg", response.response);
+            //Log.d("msg", response.response);
             final ArrayList<Department> departments = new Parser().getDepartments(response.response);
             ArrayList<String> list = new ArrayList<>();
 
@@ -78,7 +78,7 @@ public class EmployeeByDepartmentsActivity extends AppCompatActivity implements 
             });
         }
         if (response.api_name == API.EMP_BY_DEPT) {
-            Log.d("msg", response.response);
+            //Log.d("msg", response.response);
 
             ArrayList<Employee> employees = new ArrayList<>();
             employees = new Parser().getEmployees(response.response);

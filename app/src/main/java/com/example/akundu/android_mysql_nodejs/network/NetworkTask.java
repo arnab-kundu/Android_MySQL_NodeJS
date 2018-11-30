@@ -72,6 +72,7 @@ public class NetworkTask extends AsyncTask<String, Void, Response> {
             }
             //httpURLConnection.setRequestMethod("GET");
             if (requestType == RequestType.POST) {
+                Log.d("msg Request Body", "" + strings[1]);
                 httpURLConnection.setRequestMethod("POST");
 
                 OutputStream outputStream = new BufferedOutputStream(httpURLConnection.getOutputStream());
