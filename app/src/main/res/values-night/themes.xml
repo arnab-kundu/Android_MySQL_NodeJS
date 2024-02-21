@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Android_MySQL_NodeJS" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <style name="styleTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.2</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="styleEditText">
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/bg_edittext</item>
+    </style>
+
+    <style name="styleButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:background">@drawable/button_selector</item>
+    </style>
+
+</resources>
