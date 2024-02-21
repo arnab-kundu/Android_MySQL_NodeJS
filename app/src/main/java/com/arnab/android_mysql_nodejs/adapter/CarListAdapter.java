@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.arnab.android_mysql_nodejs.R;
 import com.arnab.android_mysql_nodejs.pojo.Car;
-import com.koushikdutta.ion.Ion;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -49,9 +49,13 @@ public class CarListAdapter extends ArrayAdapter {
         else
             ((TextView)convertView.findViewById(R.id.quantityInStock)).setTextColor(Color.parseColor("#32c42f"));
         quantityInStock.setText(cars.get(position).getQuantityInStock() + " Items remaining in stock.");
-        Ion.with(context)
+
+        Glide
+                .with(context)
                 .load(cars.get(position).getImage())
-                .intoImageView(car_image);
+                .centerCrop()
+                //.placeholder(R.drawable.loading_spinner)
+                .into(car_image);
         Log.d("msg", cars.get(position).getImage());
 
         return convertView;

@@ -40,4 +40,5 @@ dependencies {
 
     implementation("com.github.PhilJay:MPAndroidChart:v3.0.3")
     implementation("com.koushikdutta.ion:ion:3.0.8")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
