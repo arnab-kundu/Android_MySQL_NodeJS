@@ -1,7 +1,6 @@
 package com.arnab.android_mysql_nodejs.activity;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,8 +35,7 @@ public class AddVehicleActivity extends AppCompatActivity implements ApiResponse
     EditText MSRP;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_vehicle);
 

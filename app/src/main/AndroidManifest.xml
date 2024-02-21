@@ -33,7 +33,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".activity.SalaryChartActivity" />
         <activity android:name=".activity.CountryActivity" />
-        <activity android:name=".CarActivity" />
+        <activity android:name=".activity.CarActivity" />
         <activity android:name=".activity.AddVehicleActivity" />
         <activity android:name=".classicmodelsdb.SelectUserTypeActivity" />
         <activity android:name=".classicmodelsdb.employee.CustomerListActivity" />
